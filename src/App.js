@@ -62,58 +62,52 @@ function App() {
     }
   };
 
+  const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   return (
-    <section>
+    <section className="container is-max-desktop p-6">
       <form>
-        <span>{display}</span>
-        <button className="btn" onClick={clear}>
-          C
-        </button>
-        <button className="btn" onClick={operation}>
-          +
-        </button>
-        <button className="btn" onClick={operation}>
-          -
-        </button>
-        <button className="btn" onClick={operation}>
-          x
-        </button>
-        <button className="btn" onClick={operation}>
-          /
-        </button>
-        <button className="btn" onClick={result}>
-          =
-        </button>
-        <button className="btn" onClick={setDisplay2}>
-          1
-        </button>
-        <button className="btn" onClick={setDisplay2}>
-          2
-        </button>
-        <button className="btn" onClick={setDisplay2}>
-          3
-        </button>
-        <button className="btn" onClick={setDisplay2}>
-          4
-        </button>
-        <button className="btn" onClick={setDisplay2}>
-          5
-        </button>
-        <button className="btn" onClick={setDisplay2}>
-          6
-        </button>
-        <button className="btn" onClick={setDisplay2}>
-          7
-        </button>
-        <button className="btn" onClick={setDisplay2}>
-          8
-        </button>
-        <button className="btn" onClick={setDisplay2}>
-          9
-        </button>
-        <button className="btn" onClick={setDisplay2}>
-          0
-        </button>
+        <span className="box m-1 is-size-4">{display}</span>
+        <span className="columns p-6">
+          <span className="column">
+            <button
+              className="button is-warning  m-2 is-size-4"
+              onClick={clear}
+            >
+              C
+            </button>
+            <button className="button m-2 is-size-4" onClick={operation}>
+              +
+            </button>
+            <button className="button m-2 is-size-4" onClick={operation}>
+              -
+            </button>
+
+            <button className="button m-2 is-size-4" onClick={operation}>
+              x
+            </button>
+            <button className="button m-2 is-size-4" onClick={operation}>
+              /
+            </button>
+            <button
+              className="button m-2 is-size-4 is-primary"
+              onClick={result}
+            >
+              =
+            </button>
+          </span>
+          <span className="column is-three-quarters">
+            {numbers.map((number) => (
+              <button
+                className="button m-2 is-size-4"
+                onClick={setDisplay2}
+                key={number}
+              >
+                {numbers[number]}
+              </button>
+            ))}
+          </span>
+        </span>
       </form>
     </section>
   );
